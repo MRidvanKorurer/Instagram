@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../components/Header/Logo';
 import Search from '../components/Header/Search';
 import Icons from '../components/Header/Icons';
+import Share from '../components/Share/Share';
 
 const Header: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Header: React.FC = () => {
 
         <div>
             <Icons />
+            <Share />
         </div>
     </div>
   )
