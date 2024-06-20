@@ -2,6 +2,8 @@ import { Avatar } from '@mui/material'
 import React from 'react'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import ridvan from "../../assets/ridvan.jpeg";
+
 
 const Post: React.FC = () => {
   return (
@@ -9,7 +11,7 @@ const Post: React.FC = () => {
         <div className=' flex justify-between items-center p-4'>
             <div>
                 <div className=' flex justify-start items-center gap-x-3'>
-                    <Avatar sx={{fontSize: 100}}/>
+                    <Avatar src={ridvan} sx={{fontSize: 100}}/>
                     <p className=' font-semibold'>korurerridvan</p>
                 </div>
             </div>

@@ -5,7 +5,7 @@ import Icons from '../components/Header/Icons';
 
 const Header: React.FC = () => {
   return (
-    <div className=' flex justify-between items-center border-b py-4 border-gray-600 '>
+    <div className=' flex justify-between items-center border-b py-4 border-gray-600  '>
         <div>
             <Logo />
         </div>

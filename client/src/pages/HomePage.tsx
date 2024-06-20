@@ -4,12 +4,12 @@ import RightBox from "../components/Home/RightBox";
 
 const HomePage: React.FC = () => {
   return (
-    <div className=" flex gap-x-10 mb-8">
-      <div className=" flex-[3] ">
+    <div className=" flex gap-x-20 mb-8 justify-between">
+      <div className=" flex-[5] ">
         <LeftBox />
       </div>
 
-      <div className=" flex-[2]">
+      <div className=" flex-[2] ">
         <RightBox />
       </div>
     </div>
