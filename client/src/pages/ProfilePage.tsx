@@ -1,8 +1,13 @@
 import React from 'react'
+import ProfileHead from '../components/Profile/ProfileHead'
+import ProfileBody from '../components/Profile/ProfileBody'
 
 const ProfilePage: React.FC = () => {
   return (
-    <div>ProfilePage</div>
+    <div className=' w-6/12 mx-auto'>
+      <ProfileHead />
+      <ProfileBody />
+    </div>
   )
 }
 
