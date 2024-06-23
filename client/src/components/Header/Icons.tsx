@@ -4,12 +4,13 @@ import ChatIcon from '@mui/icons-material/Chat';
 import AddIcon from '@mui/icons-material/Add';
 import Avatar from '@mui/material/Avatar';
 import ridvan from "../../assets/ridvan.jpeg";
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { useAppDispatch } from '../../redux/hooks';
 import { handleOpen } from '../../redux/slices/postModalSlice';
 import { useNavigate } from 'react-router-dom';
 
+
 const Icons: React.FC = () => {
-  const {open} = useAppSelector(state => state.postModal);
+  // const {open} = useAppSelector(state => state.postModal);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Icons: React.FC = () => {
   return (
     <div className=' flex gap-x-5 justify-center items-center cursor-pointer'>
         <HomeIcon sx={{fontSize: 32}} onClick={() => navigate("/")}/>
-        <ChatIcon sx={{fontSize: 30}}/>
+        <ChatIcon sx={{fontSize: 30}} onClick={() => navigate("/messengar")}/>
         <AddIcon sx={{fontSize: 32}} onClick={() => dispatch(handleOpen())} />
 
         <Avatar

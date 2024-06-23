@@ -7,8 +7,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 const ProfileHead: React.FC = () => {
   return (
-    <div className=" border-b py-4 border-gray-600 ">
-      <div className=" flex justify-between items-start gap-20 px-10">
+    <div className=" border-b  py-4  border-gray-600 ">
+      <div className=" flex md:justify-between justify-center md:items-start items-center gap-20 px-10 flex-col md:flex-row">
         <div>
           <Avatar src={ridvan} sx={{ width: 260, height: 260 }} />
         </div>

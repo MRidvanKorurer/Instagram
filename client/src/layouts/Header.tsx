@@ -11,7 +11,7 @@ const Header: React.FC = () => {
             <Logo />
         </div>
 
-        <div>
+        <div className='hidden md:block'>
             <Search />
         </div>
 

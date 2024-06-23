@@ -1,11 +1,11 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import {Avatar, Input} from "@mui/material";
+import {Avatar} from "@mui/material";
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { handleClose, handleOpen } from '../../redux/slices/postModalSlice';
+import { handleClose } from '../../redux/slices/postModalSlice';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -23,7 +23,6 @@ const Share: React.FC = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 800,
         bgcolor: 'background.paper',
         // border: '2px solid #000',
         boxShadow: 24,
@@ -31,7 +30,7 @@ const Share: React.FC = () => {
       };
 
   return (
-    <div>
+    <div className=' md:w-full w-1/2'>
         <Modal
         open={open}
         onClose={() => dispatch(handleClose())}
@@ -62,20 +61,20 @@ const Share: React.FC = () => {
                 </div>
             </div>
 
-            <div className=' flex justify-between items-center select-none cursor-pointer'>
-                <div className=' flex justify-center items-center gap-2'>
+            <div className=' flex  justify-between items-center select-none cursor-pointer'>
+                <div className=' flex justify-center items-center gap-2 w-full md:w-auto'>
                     <CameraAltIcon sx={{width: 30, height:30}}/>
                     <p className=' font-semibold'>Fotoğraf</p>
                 </div>
-                <div className=' flex justify-center items-center gap-2'>
+                <div className=' md:flex hidden justify-center items-center gap-2 '>
                     <OndemandVideoIcon sx={{width: 30, height:30}}/>
                     <p className=' font-semibold'>Video</p>
                 </div>
-                <div className=' flex justify-center items-center gap-2'>
+                <div className=' md:flex hidden justify-center items-center gap-2'>
                     <CalendarMonthIcon sx={{width: 30, height:30}}/>
                     <p className=' font-semibold'>Etkinlik</p>
                 </div>
-                <div className=' flex justify-center items-center gap-2'>
+                <div className=' md:flex hidden justify-center items-center gap-2'>
                     <ShortTextIcon sx={{width: 30, height:30}}/>
                     <p className=' font-semibold'>Yazı Yaz</p>
                 </div>

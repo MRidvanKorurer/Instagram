@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
         <LeftBox />
       </div>
 
-      <div className=" flex-[2] ">
+      <div className=" flex-[2] hidden md:flex ">
         <RightBox />
       </div>
     </div>
