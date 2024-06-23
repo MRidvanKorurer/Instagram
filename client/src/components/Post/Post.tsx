@@ -1,11 +1,19 @@
 import { Avatar } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ridvan from "../../assets/ridvan.jpeg";
 
 
 const Post: React.FC = () => {
+    const [like, setLike] = useState<boolean>(false);
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+        setLike(true);
+        setCount(count + 1);
+    }
+
   return (
     <div className=' border border-gray-600 flex flex-col gap-y-4'>
         <div className=' flex justify-between items-center p-4'>
@@ -27,8 +35,8 @@ const Post: React.FC = () => {
 
         <div className=' p-4 flex flex-col gap-y-3'>
             <div className=' flex flex-col justify-center items-start gap-y-1 cursor-pointer'>
-                <FavoriteIcon />
-                <span>0 like</span>
+                <FavoriteIcon onClick={handleClick} className={`${like ? " text-red-600" : null}`}/>
+                <span>{count} like</span>
             </div>
 
             <div className=' flex gap-x-3'>
