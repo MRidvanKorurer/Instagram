@@ -25,8 +25,6 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
         
         return new IResponse("Registration success", newUser, token).created(res);
 
-        
-
     } catch (error) {
         throw new APIError("Registration Failed", 500);
     }
