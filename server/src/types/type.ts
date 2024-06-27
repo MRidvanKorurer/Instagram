@@ -2,7 +2,7 @@ import {Document} from "mongoose";
 
 
 export interface IUser extends Document {
-    _id: string,
+    _id?: string,
     fullname: string,
     username: string,
     email: string,
@@ -29,5 +29,14 @@ export interface IPost extends Document {
 
 
 export interface IConversation extends Document {
+    _id?: string,
     members: string[]
 };
+
+
+export interface IMessage extends Document {
+    _id?: string,
+    conversationId: string,
+    sender: string,
+    text: string
+}
