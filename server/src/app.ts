@@ -27,4 +27,4 @@ app.use(errorHandlerMiddleware);
 app.listen(port, () => {
     conn();
     console.log("Server is running on port " + port);
-})
+});

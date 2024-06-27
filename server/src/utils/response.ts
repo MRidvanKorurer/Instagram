@@ -1,12 +1,12 @@
 import { Response } from "express";
-import { IPost, IUser } from "../types/type";
+import { IConversation, IPost, IUser } from "../types/type";
 
 class IResponse {
     message: string | null;
-    data: IUser | IPost | null;
+    data: IUser | IPost | IConversation | null;
     token?: string | null;
 
-    constructor(message: string | null = null, data: IUser | IPost | null = null, token: string | null = null) {
+    constructor(message: string | null = null, data: IUser | IPost | IConversation | null = null, token: string | null = null) {
         this.message = message;
         this.data = data;
         this.token = token;

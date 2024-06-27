@@ -26,3 +26,8 @@ export interface IPost extends Document {
     createdAt?: string,
     updatedAt?: string
 }
+
+
+export interface IConversation extends Document {
+    members: string[]
+};

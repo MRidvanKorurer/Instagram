@@ -93,6 +93,7 @@ export const timelinePost = async (req: Request, res: Response, next: NextFuncti
 
 
 
+
 export const userPosts = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const user: IUser | null | any = await User.findOne({username: req.params.username});
