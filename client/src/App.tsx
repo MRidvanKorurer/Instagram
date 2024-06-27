@@ -14,7 +14,7 @@ function App() {
         <MainLayout>
           <Routes>
             <Route path="/" element={<HomePage />}/>
-            <Route path="/profile" element={<ProfilePage />}/>
+            <Route path="/profile/:username" element={<ProfilePage />}/>
             <Route path="/messengar" element={<MessengarPage />}/>
             <Route path="/register" element={<RegisterPage />}/>
             <Route path="/login" element={<LoginPage />}/>

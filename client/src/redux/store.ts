@@ -2,15 +2,19 @@ import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { postApi } from './services/postApi'
 import { postModalReducer } from './slices/postModalSlice'
+import { authApi } from './services/authApi'
+import { uploadFileApi } from './services/uploadFileApi'
 
 
 export const store = configureStore({
   reducer: {
     [postApi.reducerPath]: postApi.reducer,
+    [uploadFileApi.reducerPath]: uploadFileApi.reducer,
+    [authApi.reducerPath]: authApi.reducer,
     postModal: postModalReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(postApi.middleware),
+    getDefaultMiddleware().concat(postApi.middleware).concat(authApi.middleware).concat(uploadFileApi.middleware),
 })
 
 
