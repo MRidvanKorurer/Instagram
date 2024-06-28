@@ -18,7 +18,18 @@ export const authApi = createApi({
     }),
 
 
+    login: builder.mutation<IUserRes, Pick<IUser, "email" | "password">>({
+      query: (formData) => {
+        return {
+            url: `/login`,
+            method: "POST",
+            body: formData
+        }
+      },
+    }),
+
+
   }),
 })
 
-export const { useRegisterMutation } = authApi;
+export const { useRegisterMutation, useLoginMutation } = authApi;

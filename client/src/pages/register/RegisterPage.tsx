@@ -4,6 +4,9 @@ import { useState } from "react";
 import { IUser } from "../../types/type";
 import { useRegisterMutation } from "../../redux/services/authApi";
 import { useUploadMutation } from "../../redux/services/uploadFileApi";
+import {  toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+
 
 
 export const RegisterPage = () => {
@@ -19,6 +22,8 @@ export const RegisterPage = () => {
     profilePicture: null,
     bio: ""
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e: any) => {
     if (e.target.name === "profilePicture" && e.target.files) {
@@ -52,19 +57,23 @@ export const RegisterPage = () => {
 
         try {
           await register(user).unwrap()
-            .then((res) => {
-                console.log(res);
-            })
+            .then(async (res) => {
+                toast.success(res.message);
+
+                await upload(data).unwrap()
+                .then((res) => {
+                  console.log(res);
+                })
             .catch((err) => {
               console.log(err);
             })
-          await upload(data).unwrap()
-            .then((res) => {
-              console.log(res);
+            
+            navigate("/login");
             })
             .catch((err) => {
-              console.log(err);
+              toast.error(err.data.message);
             })
+          
         } catch (error) {
           console.log(error);
         }
@@ -72,8 +81,6 @@ export const RegisterPage = () => {
     }
   }
 
-
-  
   return (
     <div className="auth-page">
       <h1>Welcome to Social Media App</h1>
