@@ -54,3 +54,15 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
         throw new APIError("Login Failed", 500);
     }
 }
+
+
+
+export const me = async (req: any, res: Response) => {
+    try {
+        const user = req.user;
+
+        return new IResponse("Authentica Successfully", user).success(res);
+    } catch (error) {
+        throw new APIError("You Can Login And Try Again Please", 400);
+    }
+}
