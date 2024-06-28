@@ -3,7 +3,7 @@ import { IConversation, IMessage, IPost, IUser } from "../types/type";
 
 class IResponse {
     message: string | null;
-    data: IUser | IPost | IConversation | IMessage |null;
+    data: IUser | IPost | IConversation | IMessage | null;
     token?: string | null;
 
     constructor(message: string | null = null, data: IUser | IPost | IConversation | IMessage | null = null, token: string | null = null) {

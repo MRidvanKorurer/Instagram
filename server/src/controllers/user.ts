@@ -123,3 +123,23 @@ export const unFollowUser = async (req: Request, res: Response, next: NextFuncti
         throw new APIError("You can't unfollow yourself", 403)
     }
 }
+
+
+
+export const searchUser = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const name: any = req.query.username;
+        if(!name) {
+            return next(new APIError("Name query parameter is required", 400));
+        }
+        const users: any = await User.find({username: new RegExp(name, "i")});
+
+        if(users.length > 0) {
+            return new IResponse(null, users).success(res);
+        }else {
+            next(new APIError("No users found with that name", 400));
+        }
+    } catch (error) {
+        throw new APIError("Search Failed", 400);
+    }
+}

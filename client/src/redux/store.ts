@@ -5,6 +5,7 @@ import { postModalReducer } from './slices/postModalSlice'
 import { authApi } from './services/authApi'
 import { uploadFileApi } from './services/uploadFileApi'
 import { authReducer } from './slices/authSlice'
+import { userApi } from './services/userApi'
 
 
 export const store = configureStore({
@@ -12,11 +13,12 @@ export const store = configureStore({
     [postApi.reducerPath]: postApi.reducer,
     [uploadFileApi.reducerPath]: uploadFileApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
+    [userApi.reducerPath]: userApi.reducer,
     postModal: postModalReducer,
     auth: authReducer
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(postApi.middleware).concat(authApi.middleware).concat(uploadFileApi.middleware),
+    getDefaultMiddleware().concat(postApi.middleware).concat(authApi.middleware).concat(uploadFileApi.middleware).concat(userApi.middleware),
 })
 
 
