@@ -26,7 +26,7 @@ const Icons: React.FC = () => {
             alt="Remy Sharp"
             src={ridvan}
             sx={{ width: 46, height: 46 }}
-            onClick={() => navigate("/profile")}
+            onClick={() => navigate("/profile/username")}
         />
     </div>
   )

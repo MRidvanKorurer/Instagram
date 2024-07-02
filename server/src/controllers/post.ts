@@ -85,6 +85,7 @@ export const timelinePost = async (req: Request, res: Response, next: NextFuncti
                 return Post.find({userId: friendId})
             })
         );
+        // console.log(userPosts);
         return new IResponse("Operation Successful", userPosts.concat(...friendPosts)).success(res);
     } catch (error) {
         throw new APIError("Operation Failed", 400);

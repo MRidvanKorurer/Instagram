@@ -13,7 +13,7 @@ export interface IUser {
     isAdmin: boolean,
     createdAt?: string,
     updatedAt?: string
-    __v?: ""
+    __v?: string
 }
 
 
@@ -32,4 +32,30 @@ export interface IFileRes {
     message: string,
     data: IFile
     token: string | null
+}
+
+
+
+export interface IPost {
+    _id?: string,
+    userId: string
+    image: string,
+    description: string,
+    likes: [],
+    createdAt?: string,
+    updatedAt?: string
+}
+
+
+
+export interface IPostRes {
+    message: string,
+    data: IPost,
+    token: string | null
+}
+
+
+export interface ILikeData {
+    postId: string | undefined,
+    userId: string | undefined
 }

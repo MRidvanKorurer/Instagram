@@ -9,7 +9,7 @@ import { LoginPage } from "./pages/login/LoginPage";
 import 'react-toastify/dist/ReactToastify.css';
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { useEffect } from "react";
-import { isAuthStatus } from "./redux/slices/authSlice";
+import { getUser, isAuthStatus } from "./redux/slices/authSlice";
 import { ToastContainer } from 'react-toastify';
 
 
@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     dispatch(isAuthStatus());
+    dispatch(getUser());
 }, [dispatch])
 
   return (

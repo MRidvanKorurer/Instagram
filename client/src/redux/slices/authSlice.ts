@@ -4,11 +4,28 @@ import { IUser } from "../../types/type";
 
 
 interface IInitialState {
-    isAuth: boolean
+    isAuth: boolean,
+    user: IUser
 }
 
 const initialState:IInitialState= {
-    isAuth: false
+    isAuth: false,
+    user: {
+        _id: "",
+        fullname: "",
+        username: "",
+        email: "",
+        password: "",
+        passwordAgain: "",
+        bio: "",
+        profilePicture: "" ,
+        followers: [],
+        followings: [],
+        isAdmin: false,
+        createdAt: "",
+        updatedAt: "",
+        __v: ""
+    }
 }
 
 
@@ -25,10 +42,14 @@ const authSlice = createSlice({
         },
         isAuthStatus: (state) => {
             localStorage.getItem("user") ? state.isAuth = true : state.isAuth = false;
+        },
+        getUser: (state) => {
+            const activeUser: IUser = JSON.parse(localStorage.getItem("user"));
+            state.user = activeUser;
         }
     }
 });
 
 
-export const {saveLocalStorage, changeIsAuth, isAuthStatus } = authSlice.actions;
+export const {saveLocalStorage, changeIsAuth, isAuthStatus, getUser } = authSlice.actions;
 export const authReducer = authSlice.reducer;

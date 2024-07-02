@@ -37,7 +37,17 @@ export const userApi = createApi({
     }),
 
 
+    getSingleUserId: builder.query<IUserRes, string>({
+      query: (userId) => {
+        return {
+            url: `/single?userId=${userId}`,
+            method: "GET",
+        }
+      },
+  }),
+
+
   }),
 })
 
-export const { useGetAllUserQuery, useGetSearchUserQuery, useGetSingleUserQuery } = userApi;
+export const { useGetAllUserQuery, useGetSearchUserQuery, useGetSingleUserQuery, useGetSingleUserIdQuery } = userApi;
